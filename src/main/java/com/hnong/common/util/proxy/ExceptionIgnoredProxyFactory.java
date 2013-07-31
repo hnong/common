@@ -93,8 +93,6 @@ public final class ExceptionIgnoredProxyFactory {
             try {
                 return method.invoke(this.targetObject, objects);
             } catch (Throwable t) {
-                LOGGER.error("failed to run method {} using args {}.",
-                        method, Arrays.toString(objects), t);
                 return defaultValueMapper.getDefaultValueOfClass(method.getReturnType());
             }
         }
