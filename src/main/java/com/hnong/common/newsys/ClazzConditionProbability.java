@@ -30,7 +30,7 @@ public class ClazzConditionProbability {
         float Nc = CorpusManager.getInstance().getDocsCount(clazz);
         float N = CorpusManager.getInstance().getCorpusDocsCount();
         System.out.println("calProxc: "+ Nxc + "-" + Nc + "-" + N);
-        ret = (Nxc + 20f) / (Nc + M + N); //为了避免出现0这样极端情况，进行加权处理
+        ret = (Nxc + 1) / (Nc + M + N); //为了避免出现0这样极端情况，进行加权处理
         System.out.println("calProxc: "+ item + "-" + clazz + "-" + ret);
         return ret;
     }
